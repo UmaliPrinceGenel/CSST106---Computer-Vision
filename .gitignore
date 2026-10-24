@@ -1,0 +1,150 @@
+# ==============================================================================
+# Comprehensive .gitignore for Laravel, React/Node, and Python/FastAPI (CV Lab)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Environment & Sensitive Credentials
+# ------------------------------------------------------------------------------
+.env
+.env.backup
+.env.production
+.env.local
+.env.*.local
+*.env
+
+# ------------------------------------------------------------------------------
+# 2. Node & React Frontend
+# ------------------------------------------------------------------------------
+node_modules/
+/node_modules
+/.pnp
+.pnp.js
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Build outputs
+/build
+/dist
+dist/
+*.tsbuildinfo
+temp.tsbuildinfo
+jsconfig.node.tsbuildinfo
+
+# Logs & coverage
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+/coverage
+
+# ------------------------------------------------------------------------------
+# 3. Laravel Framework & PHP
+# ------------------------------------------------------------------------------
+/vendor
+vendor/
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*
+!/storage/framework/cache/.gitignore
+!/storage/framework/sessions/.gitignore
+!/storage/framework/views/.gitignore
+!/storage/logs/.gitignore
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+
+# ------------------------------------------------------------------------------
+# 4. Python & FastAPI Backend (cv-server)
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+develop-eggs/
+eggs/
+.eggs/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+*venv*/
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing & Type checking caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ------------------------------------------------------------------------------
+# 5. Computer Vision: Models, Weights, Uploads & Datasets
+# ------------------------------------------------------------------------------
+# Model weights (.pt files)
+*.pt
+*.pth
+*.onnx
+*.engine
+*.tflite
+*.h5
+
+# Exception: best.pt (~5.25MB, well below 50MB) is whitelisted so the app runs out-of-the-box
+!best.pt
+!cv-server/best.pt
+!**/best.pt
+
+# Explicitly ignore last.pt training checkpoints
+last.pt
+**/last.pt
+
+# Temporary file uploads & runtime directories
+/uploads/
+uploads/
+**/uploads/
+**/uploads/**
+temp_uploads/
+runs/
+.cache/
+
+# Datasets and download caches (e.g., LFW dataset, large image batches)
+datasets/
+data/
+lfw_home/
+scikit_learn_data/
+
+# Temporary test images sitting in root or backend
+coins.jpg
+street.jpg
+webcam_*.jpg
+webcam_*.png
+test_*.jpg
+test_*.png
+capture_*.jpg
+capture_*.png
+
+# ------------------------------------------------------------------------------
+# 6. IDE, Editors, & OS Files
+# ------------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
