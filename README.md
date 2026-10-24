@@ -1,75 +1,82 @@
-# Getting Started with Create React App
+# CSST106 — Computer Vision Laboratory Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An interactive, full-stack Computer Vision laboratory platform integrating a modern React (Material-UI) dashboard frontend with a high-performance Python FastAPI backend. The application features practical implementations of fundamental and advanced computer vision techniques.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🔬 Included Laboratory Activities
 
-### `Yarn`
+1. **Lab 1: Image Processing & Manipulation** — Basic transformations including grayscale conversion, ROI cropping, resizing, and rotation.
+2. **Lab 2: Edge Detection** — Comparative gradient analysis using Sobel operators and Canny edge detection algorithms.
+3. **Lab 3: Histogram Analysis & Equalization** — Contrast enhancement utilizing global histogram equalization and Contrast Limited Adaptive Histogram Equalization (CLAHE).
+4. **Lab 4: Feature Detection & Matching** — Keypoint detection and descriptor matching using SURF, SIFT, and ORB with Brute-Force Matcher.
+5. **Lab 5: PCA & Eigenfaces** — Dimensionality reduction with Principal Component Analysis and facial recognition classification using Support Vector Machines (SVM) on the LFW dataset.
+6. **Lab 6: Object Detection (YOLO)** — Real-time bounding box detection using custom YOLO model weights (`best.pt`).
+7. **Lab 7: Image Segmentation** — Multi-technique segmentation including Otsu's thresholding, Adaptive Gaussian thresholding, Watershed algorithm, contour detection, and DeepLabV3 semantic segmentation.
 
-Install packages
+---
 
-### `Yarn start`
+## 📋 Prerequisites
 
-Runs the app in the development mode.\
+Before running the project, ensure you have the following installed on your system:
 
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Python**: `v3.10` or higher
+- **Node.js**: `v18.x` or higher (with `npm` or `yarn`)
+- **PHP**: `v8.2` or higher
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `yarn test`
+## ⚠️ Important Note on Model Weights (`best.pt`)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> [!IMPORTANT]
+> For **Lab 6 (YOLO Object Detection)**, ensure your custom trained model weights file named **`best.pt`** is placed inside the **`cv-server/`** directory before starting the backend server.
+>
+> An optimized `best.pt` model file is already included in the repository, but you can replace it with your own trained weights at any time:
+> ```text
+> cv-server/
+> ├── main.py
+> └── best.pt   <-- Ensure this weights file is present
+> ```
 
-### `yarn build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 How to Run
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Follow these two steps to start the application locally:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Step 1: Start the Backend (FastAPI)
 
-### `yarn eject`
+1. Open a terminal and navigate to the backend directory:
+   ```bash
+   cd cv-server
+   ```
+2. Start the FastAPI server using Uvicorn:
+   ```bash
+   py -m uvicorn main:app --reload --port 8000
+   ```
+   *The backend API will be available and listening at:* `http://127.0.0.1:8000`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Step 2: Start the Frontend (React / Vite)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Open a **second terminal** in the project root directory (`CV_LabActs`).
+2. *(First-time setup only)* Install dependencies if not already installed:
+   ```bash
+   npm install
+   ```
+3. Start the Vite development server:
+   ```bash
+   npm run dev
+   ```
+   *The frontend dashboard will be available at:* `http://localhost:3000`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🌐 Environment Configuration
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+A clean environment template is provided in [.env.example](.env.example). You can create your local `.env` by copying it:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+cp .env.example .env
+```
