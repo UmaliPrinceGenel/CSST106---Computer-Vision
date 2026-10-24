@@ -1,6 +1,6 @@
 # CSST106 — Computer Vision Laboratory Web Application
 
-An interactive, full-stack Computer Vision laboratory platform integrating a modern React (Material-UI) dashboard frontend with a high-performance Python FastAPI backend. The application features practical implementations of fundamental and advanced computer vision techniques.
+An interactive, full-stack Computer Vision laboratory platform integrating a modern React (Material-UI) dashboard frontend with a Python FastAPI backend. The application features practical implementations of fundamental and advanced computer vision techniques.
 
 ---
 
@@ -31,7 +31,11 @@ Before running the project, ensure you have the following installed on your syst
 > [!IMPORTANT]
 > For **Lab 6 (YOLO Object Detection)**, ensure your custom trained model weights file named **`best.pt`** is placed inside the **`cv-server/`** directory before starting the backend server.
 >
-> An optimized `best.pt` model file is already included in the repository, but you can replace it with your own trained weights at any time:
+> In case `best.pt` is missing or you need to download the pre-trained weights directly:
+>
+> 📥 **[Download best.pt from Google Drive](https://drive.google.com/file/d/15ZVRLubruSjDUlvdEeRk7hyGL6wPeWer/view?usp=sharing)**
+>
+> After downloading, place the file in the `cv-server/` folder:
 > ```text
 > cv-server/
 > ├── main.py
