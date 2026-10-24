@@ -18,7 +18,7 @@ import {
 
 const labs = [
   { id: 1, title: 'Lab 1: Images', description: 'Explore fundamental image loading, display, and pixel manipulation techniques.', icon: IconPhoto, path: '/lab/images', color: '#5e35b1' },
-  { id: 2, title: 'Lab 2: Edge Detection', description: 'Apply Sobel, Canny, and Laplacian filters to detect edges in grayscale images.', icon: IconScan, path: '/lab/edge-detection', color: '#00897b' },
+  { id: 2, title: 'Lab 2: Edge Detection', description: 'Apply Sobel, and Canny filters to detect edges in grayscale images.', icon: IconScan, path: '/lab/edge-detection', color: '#00897b' },
   { id: 3, title: 'Lab 3: Histogram', description: 'Analyze and equalize image histograms for brightness and contrast normalization.', icon: IconChartBar, path: '/lab/histogram', color: '#e53935' },
   { id: 4, title: 'Lab 4: SURF Feature Detection', description: 'Detect and match robust keypoints using the SURF algorithm on real images.', icon: IconVector, path: '/lab/surf', color: '#fb8c00' },
   { id: 5, title: 'Lab 5: PCA in CV', description: 'Apply Principal Component Analysis for dimensionality reduction in image datasets.', icon: IconBrain, path: '/lab/pca', color: '#1e88e5' },
